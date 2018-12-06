@@ -1,0 +1,14 @@
+clear all;
+ii=1;
+SNR=1;
+Pfa=0:0.000001:1;
+Pd=1/2*erfc(sqrt(SNR)*erfinv(1-Pfa.*2)-sqrt(SNR));
+semilogx(Pfa,Pd);
+hold on;
+SNR=10;
+Pfa=0:0.000001:1;
+Pd=1/2*erfc(sqrt(SNR)*erfinv(1-Pfa.*2)-sqrt(SNR));
+semilogx(Pfa,Pd);
+legend('SNR=0db','SNR=10db');
+xlabel('Pfa');
+ylabel('Pd');
